@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+    <script>
+        function generateFibonacci() {
+            const n = parseInt(document.getElementById('seriesLength').value);
+	    var f0=0;
+	    var f1=1;
+	    document.writeln("<br>"+f0+"<br>"+f1);
+            for (let i = 3; i < n+1; i++) {
+			var f2=f1+f0;
+			document.writeln("<br>"+f2);
+			var f0=f1;
+			var f1=f2;
+	    }
+	   
+    }
+    </script>
+</head>
+<body>
+    <h2>Fibonacci Series</h2>
+    <input type="number" id="seriesLength" placeholder="Enter series length">
+    <button onclick="generateFibonacci()">Generate</button>
+</body>
+</html>
